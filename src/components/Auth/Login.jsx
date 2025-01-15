@@ -17,7 +17,7 @@ const Login = () => {
 
     // Clear the input fields after logging
     setEmail("");
-    setPassword("");
+    // setPassword("");
   };
 
   return (
