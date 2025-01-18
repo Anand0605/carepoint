@@ -8,7 +8,7 @@ const App = () => {
     <div>
       {/* <Login/> */}
       {/* <EmployeeDashboard/> */}
-      <AdminDashboard/>
+      {/* <AdminDashboard/> */}
     </div>
   )
 }
