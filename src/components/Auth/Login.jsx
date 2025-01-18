@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
-const Login = () => {
+const Login = ({handleLogin}) => {
+
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,23 +13,24 @@ const Login = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
+    handleLogin(email, password)
+    // console.log("Email:", email);
+    // console.log("Password:", password);
 
     // Clear the input fields after logging
     setEmail("");
-    // setPassword("");
+    setPassword("");
   };
 
   return (
-    <div className='flex h-screen w-screen items-center justify-center'>
-      <div className='border-2 border-emerald-600 p-14 rounded-xl'>
+    <div className='flex h-screen w-screen items-center justify-center bg-[#1c1c1c]'>
+      <div className='border-2 border-emerald-600 p-7 rounded-xl'>
         <form onSubmit={submitHandler} className='flex flex-col items-center justify-center'>
           <input
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className='text-black outline-none bg-transparent border-2 border-emerald-600 text-xl py-3 px-5 rounded-full w-80'
+            className=' outline-none bg-transparent border-2 border-emerald-600 text-xl py-3 px-5 rounded-full w-80 text-emerald-600'
             type='email'
             placeholder='Enter your email'
           />
@@ -37,7 +39,7 @@ const Login = () => {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className='text-black outline-none bg-transparent border-2 border-emerald-600 text-xl py-3 px-5 rounded-full w-full pr-10'
+              className='text-emerald-600 outline-none bg-transparent border-2 border-emerald-600 text-xl py-3 px-5 rounded-full w-full pr-10'
               type={showPassword ? 'text' : 'password'}
               placeholder='Enter your password'
             />
@@ -50,7 +52,7 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            className='text-black outline-none border-none bg-emerald-600 text-xl py-3 px-5 rounded-full mt-3'
+            className='text-black outline-none border-none bg-emerald-600 text-xl py-1.5 px-5 rounded-3xl mt-4'
           >
             Log In
           </button>
