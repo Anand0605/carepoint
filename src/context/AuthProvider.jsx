@@ -13,12 +13,12 @@ const AuthProvider = ({ children }) => {
         setUserData({employees,admin})
        
     },[])
-    useEffect(() => {
-        const { employees, admin } = getLocalStorage();
-        if (employees || admin) {
-          setUserData({ employees, admin });
-        }
-      }, []);
+    // useEffect(() => {
+    //     const { employees, admin } = getLocalStorage();
+    //     if (employees || admin) {
+    //       setUserData({ employees, admin });
+    //     }
+    //   }, []);
     
     //   console.log(userData); // Log to see if data is correct
     return (
