@@ -204,40 +204,40 @@ const admin = {
 
 // console.log(employees, admin);
 
-// export const setLocalStorage=()=>{
-// localStorage.setItem('employees',JSON.stringify(employees)) 
-// localStorage.setItem('admin',JSON.stringify(admin)) 
-// }
-// export const getLocalStorage = () => {
-//   const employees = JSON.parse(localStorage.getItem('employees')) 
-//   const admin = JSON.parse(localStorage.getItem('admin'))
-//   console.log(employees, admin); 
-//   return {employees,admin}     
-//   // console.log(employees, admin); // Log the retrieved data
-// };
-// Data ko localStorage me set karna
-export const setLocalStorage = () => {
-  localStorage.setItem('employees', JSON.stringify(employees));
-  localStorage.setItem('admin', JSON.stringify(admin));
-};
-
-// Data ko localStorage se get karna
+export const setLocalStorage=()=>{
+localStorage.setItem('employees',JSON.stringify(employees)) 
+localStorage.setItem('admin',JSON.stringify(admin)) 
+}
 export const getLocalStorage = () => {
-  const employees = JSON.parse(localStorage.getItem('employees'));
-  const admin = JSON.parse(localStorage.getItem('admin'));
-
-  // Agar data null ho, toh error print karo
-  if (!employees || !admin) {
-    console.error('Data localStorage me nahi hai');
-    return { employees: [], admin: null };
-  }
-
-  console.log(employees, admin);  // Console me print karo
-  return { employees, admin };
+  const employees = JSON.parse(localStorage.getItem('employees')) 
+  const admin = JSON.parse(localStorage.getItem('admin'))
+  console.log(employees, admin); 
+  return {employees,admin}     
+  // console.log(employees, admin); // Log the retrieved data
 };
+// Data ko localStorage me set karna
+// export const setLocalStorage = () => {
+//   localStorage.setItem('employees', JSON.stringify(employees));
+//   localStorage.setItem('admin', JSON.stringify(admin));
+// };
 
-// Set karne ke baad data ko get karo
-setLocalStorage();  // Pehle data set karo
+// // Data ko localStorage se get karna
+// export const getLocalStorage = () => {
+//   const employees = JSON.parse(localStorage.getItem('employees'));
+//   const admin = JSON.parse(localStorage.getItem('admin'));
+
+//   // Agar data null ho, toh error print karo
+//   if (!employees || !admin) {
+//     console.error('Data localStorage me nahi hai');
+//     return { employees: [], admin: null };
+//   }
+
+//   console.log(employees, admin);  // Console me print karo
+//   return { employees, admin };
+// };
+
+// // Set karne ke baad data ko get karo
+// setLocalStorage();  // Pehle data set karo
 
 
 
