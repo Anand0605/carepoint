@@ -17,15 +17,15 @@ const App = () => {
   const authData = useContext(AuthContext)
   // console.log(authData?.employees)
 
-  // useEffect(()=>{
-  //   if(authData){
-  //     const loggedInUser = localStorage.getItem("loggedInUser")
-  //     if(loggedInUser){
-  //       setUser(loggedInUser.role)
-  //     }
-  //   }
+  useEffect(()=>{
+    if(authData){
+      const loggedInUser = localStorage.getItem("loggedInUser")
+      if(loggedInUser){
+        setUser(loggedInUser.role)
+      }
+    }
 
-  // },[authData])
+  },[authData])
   // console.log(user)
 
   // const handleLogin = (email, password) => {
