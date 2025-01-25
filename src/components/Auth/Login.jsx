@@ -79,8 +79,6 @@ const Login = ({ handleLogin }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     handleLogin(email, password);
-
-    // Clear the input fields after logging
     setEmail("");
     setPassword("");
   };
