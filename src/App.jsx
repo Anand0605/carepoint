@@ -13,37 +13,34 @@ const App = () => {
   // },)
 
   const [user, setUser] = useState(null)
-  // const [loggedInUserData, setLoggedInUserData] = useState(null)
-  // const authData = useContext(AuthContext)
-  // console.log(authData?.employees)
+  const [loggedInUserData, setLoggedInUserData] = useState(null)
+  const authData = useContext(AuthContext)
+  console.log("Auth Data:", authData);
 
-  // useEffect(()=>{
-  //   if(authData){
-  //     const loggedInUser = localStorage.getItem("loggedInUser")
-  //     if(loggedInUser){
-  //       setUser(loggedInUser.role)
-  //     }
-  //   }
 
-  // },[authData])
+  useEffect(()=>{
+    if(authData){
+      const loggedInUser = localStorage.getItem("loggedInUser")
+      if(loggedInUser){
+        setUser(loggedInUser.role)
+      }
+    }
+
+  },[authData])
   // console.log(user)
 
   // const handleLogin = (email, password) => {
-  //   console.log("authData:", authData); // Debugging
   //   if (email === "anand@gmail.com" && password === "123") {
   //     setUser("admin");
   //     localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
-  //   } else if (authData && Array.isArray(authData.employees)) {
+  //   } else if (authData) {
   //     const employee = authData.employees.find(
   //       (e) => e.email === email && e.password === password
   //     );
   //     if (employee) {
   //       setUser("employee");
   //       setLoggedInUserData(employee);
-  //       localStorage.setItem(
-  //         "loggedInUser",
-  //         JSON.stringify({ role: "employee" })
-  //       );
+  //       localStorage.setItem("loggedInUser",JSON.stringify({ role: "employee" }));
   //     } else {
   //       alert("Invalid Credentials");
   //     }
@@ -53,20 +50,51 @@ const App = () => {
   // };
   
 
+  // const handleLogin = (email, password) => {
+  //   if (email === 'admin@me.com' && password === '123') {
+  //     setUser('admin');
+  //     localStorage.setItem('loggedInUser', JSON.stringify({ role: 'admin' }));
+  //   } else if (authData && Array.isArray(authData.employees)) {
+  //     const employee = authData.employees.find(
+  //       (e) => e.email === email && e.password === password
+  //     );
+  //     console.log(employee);
+  //     if (employee) {
+  //       setUser('employee');
+  //       localStorage.setItem('loggedInUser', JSON.stringify({ role: 'employee' }));
+  //     } else {
+  //       alert('Invalid Credentials Anand');
+  //     }
+  //   } else {
+  //     alert('Invalid Credentials Gautam');
+  //   }
+  // };
+  
   const handleLogin = (email, password) => {
-    if (email == 'admin@me.com' && password == '123') {
-      // console.log('this   is admin')
-        setUser('admin');
-    } else if (email == 'user@me.com' && password == '123') {
-      setUser('user')
-        // console.log("This is User");
+    console.log("Auth Data:", authData); // Debug log
+    if (email === 'admin@me.com' && password === '123') {
+      setUser('admin');
+      localStorage.setItem('loggedInUser', JSON.stringify({ role: 'admin' }));
+    } else if (authData && Array.isArray(authData.employees)) {
+      const employee = authData.employees.find(
+        (e) => e.email === email && e.password === password
+      );
+      console.log("Matching Employee:", employee); // Debug log
+      if (employee) {
+        setUser('employee');
+        setLoggedInUserData(employee);
+        localStorage.setItem(
+          'loggedInUser',
+          JSON.stringify({ role: 'employee', employee })
+        );
+      } else {
+        alert('Invalid Credentials Anand');
+      }
     } else {
-        alert("Invalid Credentials");
+      alert('Invalid Credentials Gautam');
     }
-};
-
-
-
+  };
+  
   
   return (
     <div>

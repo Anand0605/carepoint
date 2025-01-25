@@ -204,17 +204,35 @@ const admin = {
 
 // console.log(employees, admin);
 
-export const setLocalStorage=()=>{
-localStorage.setItem('employees',JSON.stringify(employees)) 
-localStorage.setItem('admin',JSON.stringify(admin)) 
-}
-export const getLocalStorage = () => {
-  const employees = JSON.parse(localStorage.getItem('employees')) 
-  const admin = JSON.parse(localStorage.getItem('admin'))
-  console.log(employees, admin); 
-  // return {employees,admin}     
-  // console.log(employees, admin); // Log the retrieved data
-};
+// export const setLocalStorage=()=>{
+// localStorage.setItem('employees',JSON.stringify(employees)) 
+// localStorage.setItem('admin',JSON.stringify(admin)) 
+// }
+// export const getLocalStorage = () => {
+//   const employees = JSON.parse(localStorage.getItem('employees')) 
+//   console.log(employees)
+//   const admin = JSON.parse(localStorage.getItem('admin'))
+   
+//   return {employees,admin}     
+//   // console.log(employees, admin); // Log the retrieved data
+// };
+
+
+
+// export const getLocalStorage = () => {
+//   const employees = JSON.parse(localStorage.getItem('employees') || '[]'); // Default empty array
+//   const admin = JSON.parse(localStorage.getItem('admin') || 'null'); // Default null
+
+//   if (!employees.length || !admin) {
+//     console.error('Data localStorage mein nahi mila');
+//     return { employees: [], admin: null };
+//   }
+
+//   console.log(employees, admin);
+//   return { employees, admin };
+// };
+
+
 // Data ko localStorage me set karna
 // export const setLocalStorage = () => {
 //   localStorage.setItem('employees', JSON.stringify(employees));
@@ -238,6 +256,45 @@ export const getLocalStorage = () => {
 
 // // Set karne ke baad data ko get karo
 // setLocalStorage();  // Pehle data set karo
+
+
+
+
+
+// Function to set data in localStorage
+export const setLocalStorage = () => {
+  try {
+    localStorage.setItem("employees", JSON.stringify(employees));
+    localStorage.setItem("admin", JSON.stringify(admin));
+    // console.log("Data successfully set in localStorage.");
+  } catch (error) {
+    console.error("Error setting data in localStorage:", error);
+  }
+};
+
+// Function to get data from localStorage
+export const getLocalStorage = () => {
+  try {
+    const employees = JSON.parse(localStorage.getItem("employees"));
+    const admin = JSON.parse(localStorage.getItem("admin"));
+
+    if (!employees || !admin) {
+      console.error("Data not found in localStorage.");
+      return { employees: [], admin: null };
+    }
+
+    // console.log("Retrieved data from localStorage:", { employees, admin });
+    return { employees, admin };
+  } catch (error) {
+    console.error("Error retrieving data from localStorage:", error);
+    return { employees: [], admin: null };
+  }
+};
+
+// Testing the functions
+// setLocalStorage(); // Set the data
+// getLocalStorage(); // Retrieve the data
+
 
 
 
