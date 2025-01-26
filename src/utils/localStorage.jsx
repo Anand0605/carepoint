@@ -1,8 +1,18 @@
+// localStorage.clear()
+
 const employees = [
   {
     id: 1,
-    email: "employee1@example.com",
+    firstName: "Arjun",
+    email: "e@e.com",
     password: "123",
+    taskNumbers: {
+      total: 3,
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
     tasks: [
       {
         TaskTitle: "Finalize Project Proposal",
@@ -12,7 +22,7 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
-        failed: false
+        failed: false,
       },
       {
         TaskTitle: "Attend Safety Training",
@@ -22,7 +32,7 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
-        failed: false
+        failed: false,
       },
       {
         TaskTitle: "Update CRM Records",
@@ -32,14 +42,22 @@ const employees = [
         active: true,
         newTask: false,
         completed: false,
-        failed: false
-      }
-    ]
+        failed: false,
+      },
+    ],
   },
   {
     id: 2,
-    email: "employee2@example.com",
+    firstName: "Riya",
+    email: "e2@e.com",
     password: "123",
+    taskNumbers: {
+      total: 4,
+      active: 2,
+      newTask: 2,
+      completed: 1,
+      failed: 1,
+    },
     tasks: [
       {
         TaskTitle: "Organize Team Building Activity",
@@ -49,7 +67,7 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
-        failed: false
+        failed: false,
       },
       {
         TaskTitle: "Send Weekly Status Update",
@@ -59,7 +77,7 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
-        failed: false
+        failed: false,
       },
       {
         TaskTitle: "Backup Server Data",
@@ -69,7 +87,7 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
-        failed: false
+        failed: false,
       },
       {
         TaskTitle: "Coordinate Vendor Payments",
@@ -79,14 +97,22 @@ const employees = [
         active: false,
         newTask: false,
         completed: false,
-        failed: true
-      }
-    ]
+        failed: true,
+      },
+    ],
   },
   {
     id: 3,
-    email: "employee3@example.com",
+    firstName: "Kabir",
+    email: "e3@e.com",
     password: "123",
+    taskNumbers: {
+      total: 3,
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
     tasks: [
       {
         TaskTitle: "Design Marketing Strategy",
@@ -96,7 +122,7 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
-        failed: false
+        failed: false,
       },
       {
         TaskTitle: "Conduct Product Training",
@@ -106,7 +132,7 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
-        failed: false
+        failed: false,
       },
       {
         TaskTitle: "Evaluate Customer Feedback",
@@ -116,14 +142,22 @@ const employees = [
         active: true,
         newTask: false,
         completed: false,
-        failed: false
-      }
-    ]
+        failed: false,
+      },
+    ],
   },
   {
     id: 4,
-    email: "employee4@example.com",
+    firstName: "Meera",
+    email: "e4@e.com",
     password: "123",
+    taskNumbers: {
+      total: 3,
+      active: 2,
+      newTask: 1,
+      completed: 0,
+      failed: 0,
+    },
     tasks: [
       {
         TaskTitle: "Draft Policy Updates",
@@ -133,7 +167,7 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
-        failed: false
+        failed: false,
       },
       {
         TaskTitle: "Plan Quarterly Meeting",
@@ -143,24 +177,32 @@ const employees = [
         active: true,
         newTask: false,
         completed: false,
-        failed: false
+        failed: false,
       },
       {
         TaskTitle: "Create Training Schedule",
-        TaskDescription: "Prepare a schedule for the upcoming employee training sessions.",
+        TaskDescription: "Prepare a schedule for the upcoming e training sessions.",
         TaskDate: "2025-01-24",
         category: "Training",
         active: false,
         newTask: false,
         completed: true,
-        failed: false
-      }
-    ]
+        failed: false,
+      },
+    ],
   },
   {
     id: 5,
-    email: "employee5@example.com",
+    firstName: "Ananya",
+    email: "e5@e.com",
     password: "123",
+    taskNumbers: {
+      total: 3,
+      active: 3,
+      newTask: 2,
+      completed: 0,
+      failed: 0,
+    },
     tasks: [
       {
         TaskTitle: "Write Product FAQ",
@@ -170,7 +212,7 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
-        failed: false
+        failed: false,
       },
       {
         TaskTitle: "Develop Social Media Plan",
@@ -180,7 +222,7 @@ const employees = [
         active: true,
         newTask: false,
         completed: false,
-        failed: false
+        failed: false,
       },
       {
         TaskTitle: "Test Software Updates",
@@ -190,11 +232,14 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
-        failed: false
-      }
-    ]
-  }
+        failed: false,
+      },
+    ],
+  },
 ];
+
+export default employees;
+
 
 const admin = {
   id: 1,
