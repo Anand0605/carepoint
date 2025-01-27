@@ -1,11 +1,12 @@
-import React, { useContext,useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../context/AuthProvider';
+
 
 
 
 const CreateTask = () => {
 
-  const [userData,setUserData] = useContext(AuthContext)
+  const [userData, setUserData] = useContext(AuthContext)
 
   const [taskTitle, setTaskTitle] = useState('');
   const [taskDescription, setTaskDescription] = useState('');
@@ -30,6 +31,7 @@ const CreateTask = () => {
 
   
     const data = userData
+    console.log(data)
 
     data.forEach((elem)=>{
       if(assignTo == elem.firstName){
@@ -37,6 +39,7 @@ const CreateTask = () => {
         elem.taskNumbers.newTask = elem.taskNumbers.newTask+1
       }
     })
+    // localStorage.setItem('employees',JSON.stringify(data))
     setUserData(data)
     console.log(data)
 

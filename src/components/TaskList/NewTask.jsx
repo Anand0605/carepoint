@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NewTask = () => {
+const NewTask = ({data}) => {
   return (
     <div>
       <div className='flex-shrink-0 bg-red-400 p-3 h-full w-[250px] rounded-xl'>

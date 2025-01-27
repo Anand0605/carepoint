@@ -5,11 +5,11 @@ import AdminDashboard from './components/Dashboard/AdminDashboard'
 import { AuthContext } from './context/AuthProvider';
 
 
-localStorage.clear()
+// localStorage.clear()
 const App = () => {
   const [user, setUser] = useState(null)
   const [loggedInUserData, setLoggedInUserData] = useState(null)
-  const [userData,setUserData] = useContext(AuthContext)
+  const [userData, setUserData] = useContext(AuthContext)
   
 
 
@@ -29,7 +29,7 @@ const App = () => {
     if (email === "anand@gmail.com" && password === "123") {
       setUser("admin");
       localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
-    } else if (userData) {
+    } else if ( userData) {
       const employee = userData.find(
         (e) => e.email === email && e.password === password
       );
@@ -54,3 +54,4 @@ const App = () => {
 }
 
 export default App
+

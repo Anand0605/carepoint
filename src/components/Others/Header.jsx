@@ -17,9 +17,9 @@ import React from 'react'
 
 const Header = (props) => {
   
-  if (!props) {
-    return <div>Loading...</div>
-  }
+  // if (!props) {
+  //   return <div>Loading...</div>
+  // }
 
   const logOutUser = ()=>{
     localStorage.setItem('loggedInUser','')
@@ -32,7 +32,7 @@ const Header = (props) => {
     <div className='flex items-end justify-between'>
       <h1 className='text-xl font-medium text-white'>
         Hello <br /> 
-        <span className='text-2xl font-semibold'>{props.firstName || 'User'}</span> 👍
+        <span className='text-2xl font-semibold'>username</span> 👍
       </h1>
       <button onClick={logOutUser} className='bg-red-600 text-lg font-medium px-3 py-2 rounded'>
         Log out
